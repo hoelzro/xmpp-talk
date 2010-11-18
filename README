@@ -1,0 +1,21 @@
+The source code for my XMPP talk.
+
+Code for the examples is under examples/.
+
+To build the PDF, just run 'make', and xmpp-talk.pdf will be built.
+
+This presentation requires the following LaTeX packages to be installed:
+
+- texpower
+- minted
+- ifplatform
+- pdftexcmds
+- infwarerr
+- ifluatex
+- ltxcmds
+- catchfile
+- etexcmds
+
+Most of these can be easily installed out of the oberdiek distribution.
+
+Minted itself requires the pygments Python module to be installed.
