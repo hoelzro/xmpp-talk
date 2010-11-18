@@ -10,4 +10,4 @@ all: xmpp-talk.pdf
 	latex $<
 
 clean:
-	rm -f *.ps *.pdf *.aux *.log *.dvi
+	rm -f *.ps *.pdf *.aux *.log *.dvi *.out
