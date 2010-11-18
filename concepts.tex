@@ -1,11 +1,46 @@
 \part{Concepts}
 
 \newpage
-This section will cover some basic concepts in XMPP.  Highly abstract; little to no
-actual code.
+\begin{center}
+{\huge \bfseries JIDs}
+\end{center}
+\pause
+
+JID is an acronym for Jabber ID.  A JID uniquely identifies a user on an XMPP network.
+
+\pause
+
+Here's an example JID (that happens to be mine): \jid{hoelzro@talkr.im}
+
+\pause
+
+What I didn't tell you before is that there are actually two types of JIDs!  There are full JIDs
+and bare JIDs.  \jid{hoelzro@talkr.im} is a bare JID.  An example of a full JID would be \jid{hoelzro@talkr.im/Home}.
+A bare JID uniquely identifies a user on a network, but a full JID uniquely identifies a connection on that
+network.
+
+\pause
+
+What does this mean?  This means that a single user can have multiple connections to the same network.  So I can be
+connected at home (\jid{hoelzro@talkr.im/Home}), at work (\jid{hoelzro@talkr.im/Work}), and on my phone (\jid{hoelzro@talkr.im/Droid}).
+
+\pause
+
+A full JID has three parts:
+\pause
 
 \begin{itemize}
-\item JIDs
-\item Domains vs Hosts
-\item Types of Stanzas
+\item The username (hoelzro)
+\pause
+\item The domain (talkr.im)
+\pause
+\item The resource (Home)
 \end{itemize}
+\pause
+
+Bare JIDs have a username and a domain, but no resource.
+
+\pause
+
+Note that although the domain tends to be the server you're connecting to, this is not always the case!  For example, I have
+a test server at home that manages the domain "chat.eridanus", but I can connect to it as localhost.  More on this later.
