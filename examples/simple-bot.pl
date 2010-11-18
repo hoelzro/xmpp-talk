@@ -1,5 +1,12 @@
 #!/usr/bin/env perl
 
+# simple-bot.pl
+
+# This example connects just like bare-bot.pl, but it
+# listens for the session_ready and error events and
+# discontinues the event after either after issuing
+# a short status message.
+
 use strict;
 use warnings;
 use feature 'say';
