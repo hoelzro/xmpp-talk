@@ -42,3 +42,31 @@ Bare JIDs have a username and a domain, but no resource.
 
 Note that although the domain tends to be the server you're connecting to, this is not always the case!  For example, I have
 a test server at home that manages the domain "chat.eridanus", but I can connect to it as localhost.  More on this later.
+
+\newpage
+\section*{Stanzas}
+\pause
+
+Stanzas are the basic form of communication in XMPP.  There are three kinds:
+
+\pause
+\subsection*{Presence}
+
+Presence stanzas are used to inform nodes on the network of the availability of
+other nodes.  Presence goes beyond simply online/offline; resources can mark themselves
+as away or do not disturb as well.  With certain extensions, presence can also include
+what music a user is listening to, where they are, etc.
+\footnote{These forms of rich presence are actually sent with message stanzas, but you get the point.}
+
+\pause
+\subsection*{Message}
+
+Messages are one-way, fire-and-forget stanzas that transfer data.  The data can be chat messages, notifications,
+feed content, or really anything.
+
+\pause
+\subsection*{IQ}
+
+IQs are stanzas that transfer data like messages, but they always expect a response.  An example of an IQ would be
+sending a configuration change to a chatroom; you send the change, and you want to make sure that the configuration
+succeeded or failed.  Another good example would be a ping; each ping should be replied to.
