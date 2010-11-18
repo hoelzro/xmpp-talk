@@ -9,7 +9,7 @@ all: xmpp-talk.pdf
 	dvips -o $@ $<
 
 %.dvi : %.tex $(TEX_FILES)
-	latex $<
+	latex -shell-escape $<
 
 clean:
 	rm -f *.ps *.pdf *.aux *.log *.dvi *.out
