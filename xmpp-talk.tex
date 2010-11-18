@@ -8,79 +8,17 @@
 
 \begin{document}
 
-\begin{titlepage}
-\vspace*{\fill}
-\begin{center}
-{\huge \bfseries An Introduction to XMPP} \\[0.5cm]
-{\LARGE Madison Perl Mongers} \\[0.5cm]
-{\large Rob Hoelz (\href{mailto:rob@hoelz.ro}{rob@hoelz.ro})} \\[0.5cm]
-{\large December 2010}
-\end{center}
-\vspace*{\fill}
-\end{titlepage}
-
+\include{title}
 \newpage
-\part{Introduction}
-
+\include{introduction}
 \newpage
-\begin{center}
-{\huge \bfseries What is XMPP?}
-\end{center}
-\pause
-
-\begin{itemize}
-\item Also known as Jabber
-\pause
-\item XMPP stands for e\textbf{X}tensible \textbf{M}essaging and \textbf{P}resence \textbf{P}rotocol
-\pause
-\item A near-realtime network protocol that uses XML to relay chat data
-\pause
-\item Not \textit{just} for chat!
-\end{itemize}
-
+\include{setup}
 \newpage
-\part{Setup}
-
+\include{concepts}
 \newpage
-This section will cover some of the open-source XMPP servers, and
-how to set one up.  In this talk, we'll be using Prosody (\url{http://prosody.im}).
-
+\include{clients}
 \newpage
-\part{Concepts}
-
-\newpage
-This section will cover some basic concepts in XMPP.  Highly abstract; little to no
-actual code.
-
-\begin{itemize}
-\item JIDs
-\item Domains vs Hosts
-\item Types of Stanzas
-\end{itemize}
-
-\newpage
-\part{Clients}
-
-\newpage
-This section covers the various clients available for different operating systems.
-\url{http://xmpp.org/xmpp-software/clients}
-
-\newpage
-\part{Client Libraries}
-
-\newpage
-There are many open-source implementations of XMPP out there; for a comprehensive list,
-please consult \url{http://xmpp.org/xmpp-software/libraries}.
-
-\newpage
-Since this is a MadMongers meeting, we'll be covering AnyEvent::XMPP.
-
-\newpage
-But before we dive into that, I should probably plug Strophe.
-
-\newpage
-Strophe is a Javascript library that allows web applications to speak XMPP.
-
+\include{libraries}
 \newpage
 \part{Miscellanea}
 
@@ -107,7 +45,6 @@ This section will not exist in the final draft.
 \vspace*{\fill}
 
 \newpage
-\appendix
-\section{Resources}
+\include{resources}
 
 \end{document}

@@ -1,3 +1,5 @@
+TEX_FILES=$(shell ls *.tex)
+
 all: xmpp-talk.pdf
 
 %.pdf : %.dvi
@@ -6,7 +8,7 @@ all: xmpp-talk.pdf
 %.ps  : %.dvi
 	dvips -o $@ $<
 
-%.dvi : %.tex
+%.dvi : %.tex $(TEX_FILES)
 	latex $<
 
 clean:
