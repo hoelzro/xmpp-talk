@@ -21,3 +21,6 @@ This presentation requires the following LaTeX packages to be installed:
 Most of these can be easily installed out of the oberdiek distribution.
 
 Minted itself requires the pygments Python module to be installed.
+
+A lot of slideshow-based talks rely on the speaker to clarify some of the
+slide content, so I decided to include my commentary in the LaTeX source.
