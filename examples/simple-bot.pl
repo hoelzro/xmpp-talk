@@ -4,7 +4,7 @@
 
 # This example connects just like bare-bot.pl, but it
 # listens for the session_ready and error events and
-# discontinues the event after either after issuing
+# discontinues the event loop after either after issuing
 # a short status message.
 
 use strict;
