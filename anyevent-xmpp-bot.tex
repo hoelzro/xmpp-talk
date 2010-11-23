@@ -1,0 +1,88 @@
+\part{Writing an XMPP Bot with AnyEvent::XMPP}
+
+\newpage
+Now we're going to go through how you would develop an XMPP bot
+using AnyEvent::XMPP.  We'll start simple, but by the time we're
+finished, we'll have ourselves a bot capable of handling both one-on-one
+and multiuser conversations.
+
+\pause
+So, without further ado, here is iteration 1 of the bot:
+
+\pause
+
+\begin{framed}
+\inputminted{perl}{examples/bare-bot.pl}
+\end{framed}
+
+\pause
+
+Now that we've got some code, let's walk through the example...
+
+\newpage
+
+\begin{framed}
+\begin{minted}{perl}
+#!/usr/bin/env perl
+
+# comments...
+
+use strict;
+use warnings;
+\end{minted}
+\end{framed}
+
+\pause
+\begin{comment}
+You should be familiar with this part already!
+\end{comment}
+
+\begin{framed}
+\begin{minted}{perl}
+use AnyEvent::XMPP::IM::Connection;
+\end{minted}
+\end{framed}
+
+\pause
+\begin{comment}
+This statement loads the AnyEvent::XMPP::IM::Connection class.  Normally I wouldn't
+waste my time explaining a use statement, but I just want to make sure you know there
+are three connection classes in AnyEvent::XMPP:
+
+\begin{description}
+\item[AnyEvent::XMPP::Connection] Simple connections; no bells and whistles.
+\item[AnyEvent::XMPP::IM::Connection] Provides more advanced events (message, contact_request_subscribe), initial presence, roster.
+\item[AnyEvent::XMPP::Client] Manages multiple connections.
+\end{description}
+\end{comment}
+
+\begin{framed}
+\begin{minted}{perl}
+my $cond = AnyEvent->condvar;
+
+# some code in the middle...
+
+$cond->recv;
+\end{minted}
+\end{framed}
+
+\begin{comment}
+This is how you run an AnyEvent event loop.  If you're not familiar with AnyEvent, I suggest you read up on it; however, intimate knowledge of it is not necessary for this tutorial.
+\end{comment}
+
+\newpage
+\begin{framed}
+\begin{minted}{perl}
+my $conn = AnyEvent::XMPP::IM::Connection->new(
+    jid      => 'rob@localhost',
+    password => 'abc123',
+);
+
+$conn->connect;
+\end{minted}
+\end{framed}
+
+\begin{comment}
+Creates a connection object and connects when the event loop starts running.
+Authenticates as rob@localhost, using the password 'abc123'.
+\end{comment}
