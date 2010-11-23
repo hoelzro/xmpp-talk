@@ -11,9 +11,9 @@ So, without further ado, here is iteration 1 of the bot:
 
 \pause
 
-\begin{framed}
+\begin{shaded}
 \inputminted{perl}{examples/bare-bot.pl}
-\end{framed}
+\end{shaded}
 
 \pause
 
@@ -21,7 +21,7 @@ Now that we've got some code, let's walk through the example...
 
 \newpage
 
-\begin{framed}
+\begin{shaded}
 \begin{minted}{perl}
 #!/usr/bin/env perl
 
@@ -30,18 +30,18 @@ Now that we've got some code, let's walk through the example...
 use strict;
 use warnings;
 \end{minted}
-\end{framed}
+\end{shaded}
 
 \pause
 \begin{comment}
 You should be familiar with this part already!
 \end{comment}
 
-\begin{framed}
+\begin{shaded}
 \begin{minted}{perl}
 use AnyEvent::XMPP::IM::Connection;
 \end{minted}
-\end{framed}
+\end{shaded}
 
 \pause
 \begin{comment}
@@ -56,7 +56,7 @@ are three connection classes in AnyEvent::XMPP:
 \end{description}
 \end{comment}
 
-\begin{framed}
+\begin{shaded}
 \begin{minted}{perl}
 my $cond = AnyEvent->condvar;
 
@@ -64,14 +64,14 @@ my $cond = AnyEvent->condvar;
 
 $cond->recv;
 \end{minted}
-\end{framed}
+\end{shaded}
 
 \begin{comment}
 This is how you run an AnyEvent event loop.  If you're not familiar with AnyEvent, I suggest you read up on it; however, intimate knowledge of it is not necessary for this tutorial.
 \end{comment}
 
 \newpage
-\begin{framed}
+\begin{shaded}
 \begin{minted}{perl}
 my $conn = AnyEvent::XMPP::IM::Connection->new(
     jid      => 'rob@localhost',
@@ -80,7 +80,7 @@ my $conn = AnyEvent::XMPP::IM::Connection->new(
 
 $conn->connect;
 \end{minted}
-\end{framed}
+\end{shaded}
 
 \begin{comment}
 Creates a connection object and connects when the event loop starts running.
