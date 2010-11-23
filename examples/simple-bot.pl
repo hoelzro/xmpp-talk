@@ -1,6 +1,6 @@
 #!/usr/bin/env perl
 
-# simple-bot.pl
+# examples/simple-bot.pl
 
 # This example connects just like bare-bot.pl, but it
 # listens for the session_ready and error events and
