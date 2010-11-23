@@ -15,6 +15,8 @@ This presentation requires the following LaTeX packages to be installed:
 - ltxcmds
 - catchfile
 - etexcmds
+- framed
+- verbatim
 
 Most of these can be easily installed out of the oberdiek distribution.
 
