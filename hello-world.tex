@@ -1,0 +1,71 @@
+\section*{Hello World}
+
+Here's one of those boring "Hello, World" programs I was talking about, but XMPP style!
+
+\begin{shaded}
+\inputminted{perl}{examples/hello.pl}
+\end{shaded}
+%\pause
+
+Let's take a look at that program, shall we?
+%\pause
+
+\begin{shaded}
+\begin{minted}{perl}
+use AnyEvent::XMPP::IM::Connection;
+\end{minted}
+\end{shaded}
+
+\begin{shaded}
+\begin{minted}{perl}
+my $cond = AnyEvent->condvar;
+\end{minted}
+\end{shaded}
+
+\newpage
+\begin{shaded}
+\begin{minted}{perl}
+my $conn = AnyEvent::XMPP::IM::Connection->new(
+    username => 'bot',
+    domain   => 'chat.madmongers',
+    resource => scalar(getpwuid $<),
+    host     => 'localhost',
+    port     => 5222,
+    password => 'abc123',
+);
+\end{minted}
+\end{shaded}
+
+\begin{shaded}
+\begin{minted}{perl}
+$conn->reg_cb(session_ready => sub {
+    my $msg = AnyEvent::XMPP::IM::Message->new(
+        to   => $to,
+        body => 'Hello, World!',
+    );
+
+    $msg->send($conn);
+
+    my $timer;
+    $timer = AnyEvent->timer(
+        after => 3,
+        cb    => sub {
+            undef $timer;
+            $cond->send;
+        },
+    );
+});
+\end{minted}
+\end{shaded}
+
+\begin{shaded}
+\begin{minted}{perl}
+$conn->connect;
+\end{minted}
+\end{shaded}
+
+\begin{shaded}
+\begin{minted}{perl}
+$cond->recv;
+\end{minted}
+\end{shaded}
