@@ -1,14 +1,23 @@
-\part{Client Libraries}
+The final piece of the XMPP software puzzle is libraries.  As programmers, we need
+libraries to do anything useful, unless you spend your life creating implementations of
+"Hello, World" in every computer language known to man.
 
-\newpage
+\pause
 There are many open-source implementations of XMPP out there; for a comprehensive list,
-please consult \url{http://xmpp.org/xmpp-software/libraries}.
+please consult
+
+\url{http://xmpp.org/xmpp-software/libraries}.
 
 \newpage
-Since this is a MadMongers meeting, we'll be covering AnyEvent::XMPP.
+Since this is a MadMongers meeting, I'll be covering AnyEvent::XMPP.  Also, since a lot
+of you would probably like to use XMPP in a web application context, I'll also briefly cover
+Strophe, which is an XMPP implementation for Javascript and what I used to write the web
+client.
 
-\newpage
-But before we dive into that, I should probably plug Strophe.
+\pause
 
-\newpage
-Strophe is a Javascript library that allows web applications to speak XMPP.
+If you're following along, please install AnyEvent::XMPP:
+
+\begin{shaded}
+\$ cpanm AnyEvent::XMPP
+\end{shaded}

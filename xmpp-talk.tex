@@ -10,6 +10,7 @@
 \pagestyle{empty}
 
 \def\jid#1{\textbf{#1}}
+\def\example#1{\url{https://github.com/hoelzro/xmpp-talk/raw/master/examples/#1}}
 
 \begin{document}
 
@@ -21,32 +22,13 @@
 \newpage
 \include{introduction}
 \newpage
-\include{concepts}
-\newpage
-\include{setup}
+\include{servers}
 \newpage
 \include{clients}
 \newpage
 \include{libraries}
 \newpage
-\include{anyevent-xmpp-bot}
-\newpage
-\part{Miscellanea}
-
-\newpage
-This section contains stuff I want to mention, but I haven't found a place for.
-This section will not exist in the final draft.
-
-\newpage
-\begin{itemize}
-\item XEPs (and the general extensibility of XMPP)
-\item Service Discovery? (and disco)
-\item MUC
-\item PubSub
-\item BOSH
-\item Sending binary data across XMPP
-\end{itemize}
-
+\include{hello-world}
 \newpage
 
 \vspace*{\fill}
