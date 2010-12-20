@@ -14,7 +14,12 @@ use AnyEvent::XMPP::IM::Connection;
 my $cond = AnyEvent->condvar;
 
 my $conn = AnyEvent::XMPP::IM::Connection->new(
-    jid      => 'rob@localhost',
+    #jid      => 'rob@localhost',
+    username => 'rob',
+    domain   => 'localhost',
+    resource => scalar(getpwuid $<),
+    host     => 'localhost',
+    port     => 5222,
     password => 'abc123',
 );
 
