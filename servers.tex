@@ -1,0 +1,31 @@
+Since XMPP is a decentralized protocol, you'll need a server before you can get started using it.
+If you're just interested in chatting, you may want to set up an account at a public XMPP service,
+such as one of the services listed here:
+
+\url{http://xmpp.org/services}
+
+(Unfortunately, services I have used in the past or currently use, such as core.im and talkr.im, are
+not listed here.  But they're still worth taking a look at.)
+
+An alternative to registering at a public XMPP service is to host your own.  This is useful if you want
+full control of your data or your server, or if you want your server to be internally visible only.
+
+There are several implementations of XMPP servers out there, a (fairly) comprehensive list can be found
+here:
+
+\url{http://xmpp.org/xmpp-software/servers/}
+
+I'll be demonstrating Prosody in this presentation, since that is the XMPP server with which I am most
+familiar.  Two other servers of note are djabberd (noteworthy because it is written in Perl, but it
+doesn't look very active) and ejabberd (which is written in Erlang, but is noteworthy because of its
+popularity and wide availability of extensions).
+
+You can get Prosody from here: \url{http://prosody.im/}
+
+I have a Prosody server running on my laptop right now, if you'd like to follow along, feel free to connect to my ad-hoc
+network and create an account.  The domain name for the server is \textbf{chat.madmongers}.  The configuration syntax for Prosody is
+fairly simple (it's just Lua), and you don't usually need to deviate much from the configuration provided in the distribution to
+get up and running, but for the sake of brevity, I've omitted the configuration file from the presentation itself.  If you'd
+like to take a look at the configuration I'm using, you can take a look here:
+
+\example{prosody.cfg.lua}
