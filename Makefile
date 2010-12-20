@@ -13,4 +13,4 @@ all: xmpp-talk.pdf
 	latex -shell-escape $<
 
 clean:
-	rm -f *.ps *.pdf *.aux *.log *.dvi *.out
+	rm -f *.ps *.pdf *.aux *.log *.dvi *.out *.pyg
