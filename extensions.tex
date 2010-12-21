@@ -5,18 +5,41 @@
 We've covered the M and the two Ps, but what about the X?
 
 \pause
-Important XMPP extensions:
 
+The 'X' in XMPP stands for e\textbf{X}tensible!  Since stanzas are simply chunks of XML,
+we can throw other XML chunks inside of them (you saw this with my IQ ping example).
+
+\pause
+You've already seen the MUC and Ping extensions in action, here's some other extensions that
+are available:
+
+\pause
 \begin{itemize}
-\item MUC
 \item Disco
+\pause
 \item PubSub
+\pause
 \item BOSH
+\pause
 \item XHTML-IM
+\pause
 \item vCard
+\pause
 \item Ad-hoc Commands
+\pause
 \item SOAP over XMPP
+\pause
 \item File Transfer
+\pause
 \item Jingle
+\pause
 \item Data Forms
 \end{itemize}
+
+\pause
+
+Note that these extensions are merely specifications; a server or client can choose whether or to implement
+them.  For example, Gajim can use ad-hoc commands, while Pidgin cannot; and ejabberd implements PubSub, while
+Prosody does not.  In addition, a server can choose to implement additional extensions that aren't in the list
+of officially published list of extensions; Prosody implements an extension that automatically truncates messages
+that are too long and replaces them with a link to a pastebin.
