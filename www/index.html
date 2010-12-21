@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+    <head>
+	<title>XMPP Web Client</title>
+
+        <link href='css/jquery-ui.css' type='text/css' rel='stylesheet' />
+        <link href='css/notify.css' type='text/css' rel='stylesheet' />
+
+        <style type='text/css'>
+          .error {
+            color: red;
+          }
+          .invisible {
+            display: none;
+          }
+          #chat_ui_left {
+            float: left;
+            width: 80%;
+            height: 600px;
+            border: thin solid red;
+          }
+          #roster {
+            float: right;
+            width: 18%;
+            height: 600px;
+            border: thin solid green;
+          }
+          #chat_tabs {
+            width: 100%;
+            height: 100%;
+          }
+        </style>
+
+        <script type='text/javascript' src='js/jquery.js'>
+        </script>
+        <script type='text/javascript' src='js/jquery-ui.js'>
+        </script>
+        <script type='text/javascript' src='js/jquery.corners.js'>
+        </script>
+        <script type='text/javascript' src='js/jquery.notify.js'>
+        </script>
+
+        <script type='text/javascript' src='js/strophe.js'>
+        </script>
+
+        <script type='text/javascript' src='js/client.js'>
+        </script>
+    </head>
+    <body>
+        <div id='login'>
+          <div class='tabs'>
+            <ul>
+              <li><a href='#login_tab'>Login</a></li>
+              <li><a href='#register_tab'>Register</a></li>
+            </ul>
+
+            <div id='login_tab'>
+              <div id='login_status'>
+              </div>
+
+              <form id='login_form' name='login_form' onSubmit='return false;'>
+                <label for='login_jid'>JID:</label>
+                <input id='login_jid' name='login_jid' type='text' />
+                <label for='login_password'>Password:</label>
+                <input id='login_password' name='login_password' type='password' />
+
+                <input class='button' id='login_button' type='submit' value='Login' />
+              </form>
+            </div>
+
+            <div id='register_tab'>
+              <form id='register_form' name='register_form' onSubmit='return false;'>
+                <label for='register_jid'>JID:</label>
+                <input id='register_jid' name='register_jid' type='text' />
+                <label for='register_password'>Password:</label>
+                <input id='register_password' name='register_password' type='password' />
+                <label for='password2'>Password (again):</label>
+                <input id='register_password2' name='register_password2' type='password' />
+
+                <input class='button' id='register_button' type='submit' value='Register' />
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div id='chat_ui' class='invisible'>
+          <div id='chat_ui_left'>
+            <div class='tabs' id='chat_tabs'>
+            </div>
+          </div>
+          <div id='roster'>
+          </div>
+        </div>
+    </body>
+</html>
