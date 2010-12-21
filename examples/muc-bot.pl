@@ -20,7 +20,7 @@ my $nick = getpwuid $<;
 my $cond = AnyEvent->condvar;
 
 my $conn = AnyEvent::XMPP::IM::Connection->new(
-    jid      => 'rob@chat.madmongers',
+    jid      => 'bot@chat.madmongers',
     password => 'abc123',
 );
 my $disco = AnyEvent::XMPP::Ext::Disco->new;

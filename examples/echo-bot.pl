@@ -14,7 +14,7 @@ use AnyEvent::XMPP::IM::Connection;
 my $cond = AnyEvent->condvar;
 
 my $conn = AnyEvent::XMPP::IM::Connection->new(
-    jid      => 'rob@chat.madmongers',
+    jid      => 'bot@chat.madmongers',
     password => 'abc123',
 );
 
