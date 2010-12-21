@@ -50,6 +50,8 @@ $conn->reg_cb(session_ready => sub {
 $muc->reg_cb(message => sub {
     my ( undef, undef, $msg ) = @_;
 
+    return if $msg->is_delayed;
+
     my $type = $msg->type;
     my $body = $msg->body;
 
