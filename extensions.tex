@@ -17,7 +17,7 @@ are available:
 \begin{itemize}
 \setlength{\itemsep}{1pt}
 
-\item Disco
+\item Service Discovery (aka ``Disco")
 \pause
 \item PubSub
 \pause
@@ -44,6 +44,7 @@ are available:
 
 Note that these extensions are merely specifications; a server or client can choose whether or not to implement
 them.  For example, Gajim can use ad-hoc commands, while Pidgin cannot; and ejabberd implements PubSub, while
-Prosody does not.  In addition, a server can choose to implement additional extensions that aren't in the list
+Prosody does not. \footnote{As of this writing, PubSub is not in a stable Prosody release, but is in the Mercurial trunk.}
+In addition, a server can choose to implement additional extensions that aren't in the list
 of officially published list of extensions; Prosody implements an extension that automatically truncates messages
 that are too long and replaces them with a link to a pastebin.
