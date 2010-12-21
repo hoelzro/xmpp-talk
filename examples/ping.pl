@@ -6,8 +6,6 @@ use feature 'say';
 
 use AnyEvent::XMPP::IM::Connection;
 
-my ( $dest ) = @ARGV;
-
 my $cond = AnyEvent->condvar;
 my $conn = AnyEvent::XMPP::IM::Connection->new(
     jid      => 'bot@chat.madmongers',
