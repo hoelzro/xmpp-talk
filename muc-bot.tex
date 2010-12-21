@@ -1,0 +1,45 @@
+\section*{MUC Bot}
+
+\begin{shaded}
+\inputminted{perl}{examples/muc-bot.pl}
+\end{shaded}
+\pause
+
+\begin{shaded}
+\begin{minted}{perl}
+my $disco = AnyEvent::XMPP::Ext::Disco->new;
+my $muc   = AnyEvent::XMPP::Ext::MUC->new(disco => $disco);
+
+$conn->add_extension($disco);
+$conn->add_extension($muc);
+\end{minted}
+\end{shaded}
+
+\begin{shaded}
+\begin{minted}{perl}
+$muc->join_room($conn, $room, $nick);
+\end{minted}
+\end{shaded}
+
+\begin{shaded}
+\begin{minted}{perl}
+$muc->reg_cb(message => sub {
+    my ( undef, undef, $msg ) = @_;
+
+    my $type = $msg->type;
+    my $body = $msg->body;
+
+    if($type eq 'groupchat') {
+        if($body =~ /^$nick[:,]\s*(.*)/) {
+            $body = $1;
+        } else {
+            return;
+        }
+    }
+
+    my $reply = $msg->make_reply;
+    $reply->add_body($body);
+    $reply->send;
+});
+\end{minted}
+\end{shaded}
