@@ -1,0 +1,25 @@
+\section*{Ping}
+
+\begin{shaded}
+\inputminted{perl}{examples/ping.pl}
+\end{shaded}
+\pause
+
+\begin{shaded}
+\begin{minted}{perl}
+$conn->send_iq('get', sub {
+    my ( $w ) = @_;
+
+    $w->emptyTag('ping', xmlns => 'urn:xmpp:ping');
+}, sub {
+    my ( $result, $error ) = @_;
+
+    if($error) {
+        say $error->string;
+    } else {
+        say 'received pong';
+    }
+    $cond->send;
+}, to => 'rob@chat.madmongers/Laptop');
+\end{minted}
+\end{shaded}
