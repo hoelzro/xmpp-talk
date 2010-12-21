@@ -1,0 +1,41 @@
+\section*{Echo Bot}
+
+\begin{shaded}
+\inputminted{perl}{examples/echo-bot.pl}
+\end{shaded}
+\pause
+
+\begin{shaded}
+\begin{minted}{perl}
+my $conn = AnyEvent::XMPP::IM::Connection->new(
+    jid      => 'rob@chat.madmongers',
+    password => 'abc123',
+);
+\end{minted}
+\end{shaded}
+\pause
+
+\begin{shaded}
+\begin{minted}{perl}
+$conn->reg_cb(contact_request_subscribe => sub {
+    my ( undef, undef, $contact ) = @_;
+
+    $contact->send_subscribed;
+});
+\end{minted}
+\end{shaded}
+
+\newpage
+
+\begin{shaded}
+\begin{minted}{perl}
+$conn->reg_cb(message => sub {
+    my ( undef, $msg ) = @_;
+
+    my $reply = $msg->make_reply;
+    $reply->add_body($msg->body);
+    $reply->send;
+});
+\end{minted}
+\end{shaded}
+\pause
