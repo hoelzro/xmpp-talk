@@ -1,5 +1,6 @@
 TEX_FILES=$(shell ls *.tex)
 EXAMPLES=$(shell ls examples/*)
+EPS=$(shell ls *.eps)
 
 all: xmpp-talk.pdf
 
@@ -9,7 +10,7 @@ all: xmpp-talk.pdf
 %.ps  : %.dvi
 	dvips -o $@ $<
 
-%.dvi : %.tex $(TEX_FILES) $(EXAMPLES)
+%.dvi : %.tex $(TEX_FILES) $(EXAMPLES) $(EPS)
 	latex -shell-escape $<
 
 clean:
