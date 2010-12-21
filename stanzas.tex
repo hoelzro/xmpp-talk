@@ -1,0 +1,88 @@
+Now that we've gone over the Perl code to say "Hello, World!" to someone else on an XMPP
+network, let's go over some of the XML snippets that our client and the server are exchanging.
+\pause
+
+The XML snippets that XMPP clients and servers are known as \textit{stanzas}.  Stanzas are the
+building blocks of XMPP, and there are three main types:
+\pause
+
+\begin{itemize}
+\item Presence
+\pause
+\item Message
+\pause
+\item IQ
+\end{itemize}
+
+\newpage
+\section*{Presence}
+
+\pause
+Here are some examples of presence stanzas:
+
+\begin{shaded}
+\begin{minted}{xml}
+<presence />
+\end{minted}
+\end{shaded}
+
+\pause
+\begin{shaded}
+\begin{minted}{xml}
+<presence type='unavailable' />
+\end{minted}
+\end{shaded}
+
+\pause
+\begin{shaded}
+\begin{minted}{xml}
+<presence>
+ <show>away</show>
+ <status>At Lunch</status>
+</presence>
+\end{minted}
+\end{shaded}
+
+\pause
+\begin{shaded}
+\begin{minted}{xml}
+<presence>
+ <priority>10</priority>
+</presence>
+\end{minted}
+\end{shaded}
+
+\pause
+\begin{shaded}
+\begin{minted}{xml}
+<presence to='rob@chat.madmongers' type='subscribe' />
+
+<presence from='rob@chat.madmongers' to='other-user@chat.madmongers' type='subscribed' />
+
+<presence from='rob@chat.madmongers' to='other-user@chat.madmongers' type='unsubscribed' />
+\end{minted}
+\end{shaded}
+
+\newpage
+\section*{Message}
+
+\begin{shaded}
+\begin{minted}{xml}
+<message to='rob@chat.madmongers' type='chat'>
+  <body>Hello, World!</body>
+</message>
+\end{minted}
+\end{shaded}
+
+\newpage
+\section*{IQ}
+
+\begin{shaded}
+\begin{minted}{xml}
+<iq from='chat.madmongers' to='rob@chat.madmongers/Adium' id='1' type='get'>
+  <ping xmlns='urn:xmpp:ping'/>
+</iq>
+
+<iq from='rob@chat.madmongers/Adium' to='chat.madmongers' id='1' type='result' />
+\end{minted}
+\end{shaded}
