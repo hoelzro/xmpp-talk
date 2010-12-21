@@ -28,7 +28,7 @@ $conn->reg_cb(session_ready => sub {
             say 'received pong';
         }
         $cond->send;
-    }, to => 'rob@chat.madmongers');
+    }, to => 'rob@chat.madmongers/Laptop');
 });
 
 $conn->connect;
