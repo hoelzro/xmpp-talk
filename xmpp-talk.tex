@@ -12,6 +12,10 @@
 \def\jid#1{\textbf{#1}}
 \def\example#1{\url{http://github.com/hoelzro/xmpp-talk/raw/master/examples/#1}}
 
+\newcommand{\tmpsection}[1]{}
+\let\tmpsection=\section
+\renewcommand{\section}[1]{\tmpsection*{\begin{center}\LARGE{#1}\end{center}} \smallskip \hrule height 2pt \smallskip}
+
 \begin{document}
 
 \definecolor{shadecolor}{rgb}{0.87,0.906,0.925}
