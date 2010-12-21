@@ -25,6 +25,7 @@ my $conn = AnyEvent::XMPP::IM::Connection->new(
 
 $conn->reg_cb(session_ready => sub {
     my $msg = AnyEvent::XMPP::IM::Message->new(
+        type => 'chat',
         to   => $to,
         body => 'Hello, World!',
     );
