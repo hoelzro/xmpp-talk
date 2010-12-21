@@ -1,6 +1,11 @@
 #!/usr/bin/env perl
 
-use 5.12.0;
+# examples/hello.pl
+
+# This example connects to the server, sends a message to the
+# specified recipient, and exits.
+
+use strict;
 use warnings;
 
 use AnyEvent::XMPP::IM::Connection;
@@ -37,5 +42,4 @@ $conn->reg_cb(session_ready => sub {
 });
 
 $conn->connect;
-
 $cond->recv;
