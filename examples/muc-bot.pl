@@ -56,8 +56,9 @@ $muc->reg_cb(message => sub {
     my $body = $msg->body;
 
     if($type eq 'groupchat') {
-        if($body =~ /^$nick[:,]\s*(.*)/) {
-            $body = $1;
+        if($body =~ /^$nick([:,])\s*(.*)/) {
+            my $from = $msg->from_nick;
+            $body = "$from$1 $2";
         } else {
             return;
         }
