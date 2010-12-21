@@ -7,6 +7,10 @@ Here's one of those boring "Hello, World" programs I was talking about, but XMPP
 \begin{shaded}
 \inputminted{perl}{examples/hello.pl}
 \end{shaded}
+
+\newpage
+\section{"Hello, World!" explained}
+
 \pause
 
 \begin{shaded}
@@ -22,7 +26,7 @@ my $cond = AnyEvent->condvar;
 \end{minted}
 \end{shaded}
 
-\newpage
+\pause
 \begin{shaded}
 \begin{minted}{perl}
 my $conn = AnyEvent::XMPP::IM::Connection->new(
@@ -54,11 +58,26 @@ my $conn = AnyEvent::XMPP::IM::Connection->new(
 \end{minted}
 \end{shaded}
 
+(for comparison):
+
+\begin{shaded}
+\begin{minted}{perl}
+my $conn = AnyEvent::XMPP::IM::Connection->new(
+    username => 'bot',
+    domain   => 'chat.madmongers',
+    resource => scalar(getpwuid $<),
+    host     => 'localhost',
+    port     => 5222,
+    password => 'abc123',
+);
+\end{minted}
+\end{shaded}
+
 \pause
 The 'jid' option allows you to provide a JID.  A JID is short for \textit{Jabber ID}, and it's how
 you identify users on a network.
 
-\pause
+\newpage
 \begin{shaded}
 \begin{minted}{perl}
 $conn->reg_cb(session_ready => sub {
@@ -82,12 +101,14 @@ $conn->reg_cb(session_ready => sub {
 \end{minted}
 \end{shaded}
 
+\pause
 \begin{shaded}
 \begin{minted}{perl}
 $conn->connect;
 \end{minted}
 \end{shaded}
 
+\pause
 \begin{shaded}
 \begin{minted}{perl}
 $cond->recv;
